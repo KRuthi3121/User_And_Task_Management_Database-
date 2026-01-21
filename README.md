@@ -28,6 +28,9 @@ Indexes are created at startup.
 ## Concurrency & Safety
 MongoDB guarantees document-level atomicity. Updates use `update_one` with `$set`, preventing partial writes.
 
+## Atomicity Guarantee
+All task updates use single-document `update_one` operations. MongoDB guarantees atomicity at the document level, ensuring no partial or inconsistent writes during concurrent updates.
+
 ## Execution
 1. Start MongoDB:
    ```bash
